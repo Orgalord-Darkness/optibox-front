@@ -1,0 +1,46 @@
+import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class HistoryService {
+  private withdrawHistoryArray: any[] = [];
+  private depositHistoryArray: any[] = [];
+  private checkHistoryArray: any[] = [];
+  constructor(private httpClient: HttpClient) {
+    this.refreshHistory();
+  }
+
+  // history.service.ts
+  refreshHistory(): Promise<void> {
+    return Promise.all([
+      this.httpClient.get('api/history/withdraw').toPromise().then((withdrawHistory: any) => {
+        this.withdrawHistoryArray = withdrawHistory;
+      }),
+      this.httpClient.get('api/history/deposit').toPromise().then((depositHistory: any) => {
+        this.depositHistoryArray = depositHistory;
+      }),
+      this.httpClient.get('api/checks').toPromise().then((checkHistory: any) => {
+        this.checkHistoryArray = checkHistory;
+      })
+    ]).then(() => {});
+  }
+
+
+  getAllWithdrawHistory() {
+    return this.withdrawHistoryArray;
+  }
+
+  getAllDepositHistory() {
+    return this.depositHistoryArray;
+  }
+
+  getAllCheckHistory() {
+    return this.checkHistoryArray;
+  }
+
+  getHistoryByStockId(id: number) {
+    return this.httpClient.get('api/history/getHistoryByStockId/' + id).toPromise();
+  }
+}
