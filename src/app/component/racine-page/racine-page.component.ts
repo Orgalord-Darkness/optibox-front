@@ -136,7 +136,8 @@ export class RacinePageComponent implements OnInit {
     this.nbStocksOK = 0;
     this.nbStocksNOK = 0;
     this.nbStocksHS = 0;
-    this.stockService.getAllStocks().forEach(stock => {
+    this.stockService.getAllStocks().forEach(stock => { 
+      console.log(stock); 
       if (stock.status === 1) {
         this.nbStocksOK++;
       } else if (stock.status === 0) {
@@ -145,6 +146,7 @@ export class RacinePageComponent implements OnInit {
         this.nbStocksHS++;
       }
     });
+    console.log('iciciiciciciic'); 
   }
 
   isLoggedIn(): boolean {

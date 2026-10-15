@@ -7,7 +7,7 @@ services:
     ports:
       - "${ANGULAR_PORT}:4200"
     volumes:
-      - /var/www/OPtiBox/SHOP-STI_Front/certs:/certs:ro
+      - ./certs:/certs:ro
     networks:
       - optibox-shared-network
 
