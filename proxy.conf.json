@@ -1,13 +1,13 @@
 {
   "/api": {
-    "target": "http://sx04nellt0200.ad.ponet:8001",
+    "target": "http://sx04nellt0200.ad.ponet:8009",
     "secure": false,
     "pathRewrite": {
       "^/api": ""
     }
   },
   "/ws": {
-    "target": "http://sx04nellt0200.ad.ponet:8001",
+    "target": "http://sx04nellt0200.ad.ponet:8009",
     "secure": false,
     "ws": true
   }

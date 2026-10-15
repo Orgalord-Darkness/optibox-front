@@ -638,12 +638,12 @@
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "http://localhost:4200/*",
-        "http://sx04nellt0200.ad.ponet:4200/*"
+        "http://localhost:8008/*",
+        "http://sx04nellt0200.ad.ponet:8008/*"
       ],
       "webOrigins": [
         "*",
-        "http://sx04nellt0200:4200"
+        "http://sx04nellt0200:8008"
       ],
       "notBefore": 0,
       "bearerOnly": false,

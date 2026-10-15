@@ -1,16 +1,16 @@
-name: optibox-frontend
+name: optibox-dev-frontend
 
 services:
   angular-app:
     build: .
-    container_name: angular-app
+    container_name: angular-dev-app
     ports:
       - "${ANGULAR_PORT}:4200"
     volumes:
-      - /var/www/OPtiBox/SHOP-STI_Front/certs:/certs:ro
+      - /var/www/OPtiBox_dev/optibox-front/certs:/certs:ro
     networks:
-      - optibox-shared-network
+      - optibox-dev-shared-network
 
 networks:
-  optibox-shared-network:
+  optibox-dev-shared-network:
     external: true
